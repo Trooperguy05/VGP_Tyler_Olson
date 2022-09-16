@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
     private float xBounds = 10;
     public float horizontalInput;
     public float horizontalSpeed = 10.0f;
+    public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,11 @@ public class playerMovement : MonoBehaviour
         }
         if (transform.position.x > xBounds) {
             transform.position = new Vector3(xBounds, transform.position.y, transform.position.z);
+        }
+        // Checks if player is trying to shoot a projectile
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            // Launch a projectile from the player
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }
 }
