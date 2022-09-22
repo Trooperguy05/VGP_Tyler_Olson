@@ -32,6 +32,7 @@ public class playerController : MonoBehaviour
             isGrounded = false;
             playerAnimator.SetTrigger("Jump_trig");
             dirtParticle.Stop();
+            playerAS.PlayOneShot(jumpSound, 1.0f);
         }
     }
     
