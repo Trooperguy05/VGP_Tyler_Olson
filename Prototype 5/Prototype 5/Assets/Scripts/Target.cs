@@ -39,7 +39,7 @@ public class Target : MonoBehaviour
         return new Vector3(Random.Range(-xRange, xRange), ySpawnPosition);
     }
     private void OnMouseDown() {
-        if (!gameManager.isGameActive) {
+        if (gameManager.isGameActive) {
             Destroy(gameObject);
             gameManager.UpdateScore(pointValue);
             Instantiate(explosionFx, transform.position, explosionFx.transform.rotation);
