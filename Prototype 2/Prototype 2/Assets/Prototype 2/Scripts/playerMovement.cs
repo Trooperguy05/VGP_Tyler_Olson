@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    private float xBounds = 10;
+    private float xBounds = 20;
     public float horizontalInput;
     public float horizontalSpeed = 10.0f;
     public GameObject projectilePrefab;
