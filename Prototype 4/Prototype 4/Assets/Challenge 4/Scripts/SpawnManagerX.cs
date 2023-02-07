@@ -16,6 +16,7 @@ public class SpawnManagerX : MonoBehaviour
 
 
     public GameObject player; 
+    public int waveSpeed;
 
     // Update is called once per frame
     void Update()
@@ -40,6 +41,7 @@ public class SpawnManagerX : MonoBehaviour
 
     void SpawnEnemyWave(int enemiesToSpawn)
     {
+        waveSpeed += 5;
         Vector3 powerupSpawnOffset = new Vector3(0, 0, -15); // make powerups spawn at player end
 
         // If no powerups remain, spawn a powerup

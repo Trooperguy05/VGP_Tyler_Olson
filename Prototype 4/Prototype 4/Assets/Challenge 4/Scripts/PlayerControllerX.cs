@@ -11,6 +11,8 @@ public class PlayerControllerX : MonoBehaviour
     public bool hasPowerup;
     public GameObject powerupIndicator;
     public int powerUpDuration = 5;
+    private bool ableToTurbo = true;
+    public ParticleSystem smokeParticles;
 
     private float normalStrength = -10; // how hard to hit enemy without powerup
     private float powerupStrength = -25; // how hard to hit enemy with powerup
@@ -29,6 +31,15 @@ public class PlayerControllerX : MonoBehaviour
 
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (ableToTurbo) {
+                playerRb.AddForce(focalPoint.transform.forward * 20, ForceMode.Impulse);
+                smokeParticles.Play();
+                ableToTurbo = false;
+                StartCoroutine(TurboCooldown());
+            }
+        }
 
     }
 
@@ -50,6 +61,11 @@ public class PlayerControllerX : MonoBehaviour
         yield return new WaitForSeconds(powerUpDuration);
         hasPowerup = false;
         powerupIndicator.SetActive(false);
+    }
+
+    IEnumerator TurboCooldown() {
+        yield return new WaitForSeconds(10);
+        ableToTurbo = true;
     }
 
     // If Player collides with enemy
