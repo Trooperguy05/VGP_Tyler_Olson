@@ -546,7 +546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df4f8815255d0644bb4abf77c1e5135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5071325525739799559, guid: fe844226f4a43404eb1d1d871f559efa, type: 3}
+  enemyPrefabs:
+  - {fileID: 5071325525739799559, guid: fe844226f4a43404eb1d1d871f559efa, type: 3}
+  - {fileID: 5071325525739799559, guid: 688e5910c6a0f7a498cd74abd72d79c0, type: 3}
   spawnRange: 9
   enemyCount: 0
   waveNumber: 1
@@ -693,7 +695,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e65f14b42d220b741bb74e16a4f06140, type: 2}
+  - {fileID: 2100000, guid: a72b69f8097f77d468bfae156b5b599b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
