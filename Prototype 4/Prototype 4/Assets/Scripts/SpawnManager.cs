@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
     {
         SpawnEnemies(waveNumber);
         int randomPowerup = Random.Range(0, powerupPrefabs.Length);
-        Instantiate(powerupPrefabs[randomPowerup], GenerateSpawnPosition(), powerupPrefabs[randomPowerup].transform.rotation);
+        Instantiate(powerupPrefabs[randomPowerup], GenerateSpawnLocationPU(), powerupPrefabs[randomPowerup].transform.rotation);
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class SpawnManager : MonoBehaviour
             waveNumber++;
             SpawnEnemies(waveNumber);
             int randomPowerup = Random.Range(0, powerupPrefabs.Length);
-            Instantiate(powerupPrefabs[randomPowerup], GenerateSpawnPosition(), powerupPrefabs[randomPowerup].transform.rotation);
+            Instantiate(powerupPrefabs[randomPowerup], GenerateSpawnLocationPU(), powerupPrefabs[randomPowerup].transform.rotation);
         }
     }
 
