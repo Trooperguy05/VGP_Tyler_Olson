@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class DifficultyButton : MonoBehaviour
 {
+    [Header("Buttons")]
     private Button button;
+    [Header("Scripts")]
     private GameManager gameManager;
+    [Header("Intergers")]
     public int difficulty;
     // Start is called before the first frame update
     void Start()
@@ -15,9 +18,6 @@ public class DifficultyButton : MonoBehaviour
         button.onClick.AddListener(SetDifficulty);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-
-    // Update is called once per frame
-
 
     void SetDifficulty() {
         Debug.Log("Funni button named" + gameObject.name);

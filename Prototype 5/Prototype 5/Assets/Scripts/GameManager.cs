@@ -7,25 +7,20 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("GameObjects")]
     public List<GameObject> targets;
-    private float spawnRate = 1.0f;
-    public TextMeshProUGUI scoreText;
-    private int score;
-    public TextMeshProUGUI gameOverText;
-    public bool isGameActive;
-    public Button restartButton;
     public GameObject titleScreen;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Floats")]
+    private float spawnRate = 1.0f;
+    [Header("Intergers")]
+    private int score;
+    [Header("Booleans")]
+    public bool isGameActive;
+    [Header("TextMeshPro")]
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
+    [Header("Buttons")]
+    public Button restartButton;
 
     IEnumerator SpawnTargets() {
         while (isGameActive) {
